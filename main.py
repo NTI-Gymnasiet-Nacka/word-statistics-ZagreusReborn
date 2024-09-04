@@ -40,15 +40,15 @@ def average_length(word: list):
     l=0
     for i in word:
         l+=len(i)
-    return l/len(word)
+    return f'{l/len(word):.2f}'
 
 def longest_and_shortest_words(word: list):
-    word_length=word
+    word_length=[]
     for i in range(0,len(word)):
-        word_length[i]=len(word[i])
+        word_length.append(len(word[i]))
     longest=max(word_length)
     shortest=min(word_length)
-    return [word[word_length.index(longest)],word[word_length.index(shortest)]]
+    return f'{word[word_length.index(longest)]}, {word[word_length.index(shortest)]}'
 def main():
     
     sentences = read_from_file("en_resa_genom_svenska_skogen.txt") # Här har du nu en lista av strängar från den inlästa filen.
